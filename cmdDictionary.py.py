@@ -18,6 +18,8 @@ while(flag):
 	query = query.lower() # our json file has all keys in lowercase
 	if(query in datadict):
 		result = datadict[query]
+	elif(query.title() in datadict):
+		result = datadict[query.title()]
 	elif(len(get_close_matches(query,datadict.keys())) > 0):
 		query = get_close_matches(query,datadict.keys())[0]
 		result = datadict[query]
