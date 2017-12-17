@@ -20,6 +20,8 @@ while(flag):
 		result = datadict[query]
 	elif(query.title() in datadict):
 		result = datadict[query.title()]
+	elif(query.upper() in datadict):
+		result = datadict[query.upper()]
 	elif(len(get_close_matches(query,datadict.keys())) > 0):
 		query = get_close_matches(query,datadict.keys())[0]
 		result = datadict[query]
